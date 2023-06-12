@@ -16,7 +16,7 @@
 
 # FaceRecognition-Windows
 ## Introduction
-This is the face recognition Python project for Windows.
+This is the Face Recognition Python project for Windows.
 
 > The demo is integrated with KBY-AI's Face Recognition Server SDK.
 
