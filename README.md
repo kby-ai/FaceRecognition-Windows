@@ -4,7 +4,7 @@
 
 # FaceRecognition-Windows
 
-## Face Recognition SDK(Windows, Linux)
+## Face Recognition Server SDK(Windows)
 
   | Features      |
   |------------------|
