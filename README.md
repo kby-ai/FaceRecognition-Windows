@@ -14,7 +14,7 @@
 This repository demonstrates an advanced face recognition technology by implementing face comparison based on face feature extraction and face matching algorithm.<br/>
 It includes features that allow for testing face recognition between two images using both image files and base64-encoded images.
 
-> In this repo, we integrated KBY-AI's face recognition solution into Windows Server SDK.<br/>
+> In this repo, we integrated `KBY-AI`'s face recognition solution into `Windows Server SDK`.<br/>
 > We can customize the SDK to align with your specific requirements.
 
 ### ◾FaceSDK(Server) Details
@@ -37,32 +37,32 @@ It includes features that allow for testing face recognition between two images 
   | 3        | [Face Recognition - Linux](https://github.com/kby-ai/FaceRecognition-Docker)    | Face Recognition |
   | ➡️        | <b>[Face Recognition - Windows](https://github.com/kby-ai/FaceRecognition-Windows)</b>    | <b>Face Recognition</b> |
 
-> To get Face SDK(mobile), please visit products [here](https://github.com/kby-ai/Product):<br/>
+> To get `Face SDK(mobile)`, please visit products [here](https://github.com/kby-ai/Product):<br/>
 
 ## Try the API
 ### Online Demo
   You can test the SDK using images from the following URL:
-  https://web.kby-ai.com
+  `https://web.kby-ai.com`
   
   ![image](https://github.com/kby-ai/FaceRecognition-Docker/assets/125717930/a7aa607c-8c40-4ef0-9592-7332c97457ca)
   
 ### Postman
-  To test the API, you can use Postman. Here are the endpoints for testing:
-  - Test with an image file: Send a POST request to http://18.221.33.238:8081/compare_face
-  - Test with a base64-encoded image: Send a POST request to http://18.221.33.238:8081/compare_face_base64
+  To test the API, you can use `Postman`. Here are the endpoints for testing:
+  - Test with an image file: Send a POST request to `http://18.221.33.238:8081/compare_face`.
+  - Test with a base64-encoded image: Send a POST request to `http://18.221.33.238:8081/compare_face_base64`.
 
-    You can download the Postman collection to easily access and use these endpoints. [click here](https://github.com/kby-ai/FaceRecognition-Docker/tree/main/postman/kby-ai-face.postman_collection.json)
+    You can download the `Postman` collection to easily access and use these endpoints. [click here](https://github.com/kby-ai/FaceRecognition-Docker/tree/main/postman/kby-ai-face.postman_collection.json)
     
     ![image](https://github.com/kby-ai/FaceRecognition-Docker/assets/125717930/dce48454-6d41-46f0-9623-b26bec103616)
 
 
 ## SDK License
 
-This project uses KBY-AI's Face Recognition Server SDK, which requires a license per machine.
+This project uses `KBY-AI`'s `Face Recognition Server SDK`, which requires a license per machine.
 
 - The code below shows how to use the license: https://github.com/kby-ai/FaceRecognition-Windows/blob/6090da85e684cc699bd4a8c45e9b986ef2a91aac/test.py#L19-L34
 
-- To request the license, please provide us with the machine code obtained from the "getMachineCode" function.
+- To request the license, please provide us with the `machine code` obtained from the `getMachineCode` function.
 
 #### Please contact us:
 🧙`Email:` contact@kby-ai.com</br>
@@ -73,7 +73,7 @@ This project uses KBY-AI's Face Recognition Server SDK, which requires a license
 
 ## How to run
 
-> We have not published facesdk2.dll. If you need the SDK DLL, please get in touch with us.
+> We have not published `facesdk2.dll`. If you need the `SDK dynamic file(*.dll)`, please get in touch with us.
 
 
 ### 1. System Requirements
@@ -85,13 +85,13 @@ This project uses KBY-AI's Face Recognition Server SDK, which requires a license
 
 ### 2. Setup and Test
   - Clone the project:
-    ```
+    ```bash
     git clone https://github.com/kby-ai/FaceRecognition-Windows.git
     ```
   - Download the model from Google Drive and unzip: [click here](https://drive.google.com/file/d/19vA7ZOlo19BcW8v4iCoCGahUEbgKCo48/view?usp=sharing)
 
   - Run the python code:
-    ```
+    ```bash
     python test.py
     ```
   - Send us the machine code and then we will give you a license key.
@@ -108,8 +108,8 @@ This project uses KBY-AI's Face Recognition Server SDK, which requires a license
 
 - Step One
 
-  First, obtain the machine code for activation and request a license based on the machine code.
-  ```
+  First, obtain the `machine code` for activation and request a license based on the `machine code`.
+  ```python
   machineCode = getMachineCode()
   print("machineCode: ", machineCode.decode('utf-8'))
   ```
@@ -117,25 +117,25 @@ This project uses KBY-AI's Face Recognition Server SDK, which requires a license
 - Step Two
 
   Next, activate the SDK using the received license.
-  ```
+  ```python
   setActivation(license.encode('utf-8'))
   ```  
-  If activation is successful, the return value will be SDK_SUCCESS. Otherwise, an error value will be returned.
+  If activation is successful, the return value will be `SDK_SUCCESS`. Otherwise, an error value will be returned.
 
 - Step Three
 
   After activation, call the initialization function of the SDK.
-  ```
+  ```python
   initSDK("data".encode('utf-8'))
   ```
   The first parameter is the path to the model.
 
-  If initialization is successful, the return value will be SDK_SUCCESS. Otherwise, an error value will be returned.
+  If initialization is successful, the return value will be `SDK_SUCCESS`. Otherwise, an error value will be returned.
 
 ### 2. Enum and Structure
   - SDK_ERROR
   
-    This enumeration represents the return value of the 'initSDK' and 'setActivation' functions.
+    This enumeration represents the return value of the `initSDK` and `setActivation` functions.
 
     | Feature| Value | Name |
     |------------------|------------------|------------------|
@@ -170,11 +170,11 @@ This project uses KBY-AI's Face Recognition Server SDK, which requires a license
 ### 3. APIs
   - Face Detection
   
-    The Face SDK provides a single API for detecting faces, determining face orientation (yaw, roll, pitch), assessing face quality, detecting facial occlusion, eye closure, mouth opening, and identifying facial landmarks.
+    The `Face SDK` provides a single API for detecting faces, determining `face orientation` (yaw, roll, pitch), assessing `face quality`, detecting `facial occlusion`, `eye closure`, `mouth opening`, and identifying `facial landmarks`.
     
     The function can be used as follows:
 
-    ```
+    ```python
     faceBoxes = (FaceBox * maxFaceCount)()
     faceCount = faceDetection(image_np, image_np.shape[1], image_np.shape[0], faceBoxes, maxFaceCount)
     ```
@@ -183,18 +183,18 @@ This project uses KBY-AI's Face Recognition Server SDK, which requires a license
     * The first parameter: the byte array of the RGB image buffer.
     * The second parameter: the width of the image.
     * The third parameter: the height of the image.
-    * The fourth parameter: the 'FaceBox' array allocated with 'maxFaceCount' for storing the detected faces.
-    * The fifth parameter: the count allocated for the maximum 'FaceBox' objects.
+    * The fourth parameter: the `FaceBox` array allocated with `maxFaceCount` for storing the detected faces.
+    * The fifth parameter: the count allocated for the maximum `FaceBox` objects.
 
     The function returns the count of the detected face.
 
   - Create Template
 
-    The SDK provides a function that enables the generation of templates from RGB data. These templates can be used for face verification between two faces.
+    The SDK provides a function that enables the generation of `template`s from RGB data. These `template`s can be used for face verification between two faces.
 
     The function can be used as follows:
 
-    ```    
+    ```python    
     templateExtraction(image_np1, image_np1.shape[1], image_np1.shape[0], faceBoxes1[0])
     ```
 
@@ -202,19 +202,19 @@ This project uses KBY-AI's Face Recognition Server SDK, which requires a license
     * The first parameter: the byte array of the RGB image buffer.
     * The second parameter: the width of the image.
     * The third parameter: the height of the image.
-    * The fourth parameter: the 'FaceBox' object obtained from the 'faceDetection' function.
+    * The fourth parameter: the `FaceBox` object obtained from the `faceDetection` function.
 
-    If the template extraction is successful, the function will return 0. Otherwise, it will return -1.
+    If the `template` extraction is successful, the function will return `0`. Otherwise, it will return `-1`.
     
   - Calculation similiarity
 
-    The 'similarityCalculation' function takes a byte array of two templates as a parameter. 
+    The `similarityCalculation` function takes a byte array of two `template`s as a parameter. 
 
-    ```
+    ```python
     similarity = similarityCalculation(faceBoxes1[0].templates, faceBoxes2[0].templates)
     ```
 
-    It returns the similarity value between the two templates, which can be used to determine the level of likeness between the two individuals.
+    It returns the similarity value between the two `template`s, which can be used to determine the level of likeness between the two individuals.
 
 ### 4. Thresholds
   The default thresholds are as the following below:
