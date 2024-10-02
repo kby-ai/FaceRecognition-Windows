@@ -219,3 +219,5 @@ This project uses `KBY-AI`'s `Face Recognition Server SDK`, which requires a lic
 ### 4. Thresholds
   The default thresholds are as the following below:
   https://github.com/kby-ai/FaceRecognition-Windows/blob/6090da85e684cc699bd4a8c45e9b986ef2a91aac/test.py#L14-L16
+
+[![Visitors](https://api.visitorbadge.io/api/combined?path=https%3A%2F%2Fgithub.com%2Fkby-ai%2FFaceRecognition-Windows&countColor=%23263759)](https://visitorbadge.io/status?path=https%3A%2F%2Fgithub.com%2Fkby-ai%2FFaceRecognition-Windows)
